@@ -1,6 +1,6 @@
 body {
   font-family: 'Barlow', sans-serif;
-  background: #ffafa7;
+  background: #86d8ff;
 }
 
 .titulo-ppal {
@@ -70,18 +70,18 @@ body {
 
 .btn1 {
   background-color: white;
-  color: #ff434c;
-  border: 0.1em solid #ff434c;
+  color: #2fa5fa;
+  border: 0.1em solid #2fa5fa;
 }
 
 .btn1:hover {
-  background-color: #ff434c;
+  background-color: #2fa5fa;
   color: white;
 }
 
 a {
   text-decoration: none;
-  color: #ff434c;
+  color: #2fa5fa;
 }
 
 a:hover {
