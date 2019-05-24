@@ -4,6 +4,7 @@ var exphbs = require('express-handlebars');
 var MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 var dateTime = require('node-datetime');
+var Pusher = require('pusher');
 
 // Inicialización Express
 var app = express();
@@ -15,6 +16,15 @@ app.set('view engine', 'handlebars');
 const url = 'mongodb://localhost:27017';
 const dbName = 'parcial2';
 const client = new MongoClient(url);
+
+// Inicialización Pusher
+var pusher = new Pusher({
+    appId: '788469',
+    key: '48aa33fe9a6470da8fd8',
+    secret: '552daf810dcce5d42fba',
+    cluster: 'us2',
+    encrypted: true
+});
 
 app.get('/', function (request, response) {
     response.render('home');
@@ -51,7 +61,7 @@ function insertarVisita(response, pagina, paginaTexto) {
         };
         collection.insertOne(visita, function (err) {
             assert.equal(err, null);
-            response.render(pagina);
+            enviarMensaje(response, pagina);
         });
     });
 }
@@ -84,6 +94,39 @@ function obtenerVisitas(response, pagina) {
                 visitas: docs
             };
             response.render(pagina, contexto);
+        });
+    });
+}
+
+function enviarMensaje(response, pagina){
+    client.connect(function (err) {
+        assert.equal(null, err);
+        const db = client.db(dbName);
+        const visitas = db.collection('visitas');
+        visitas.find({}).toArray(function (err, docs) {
+            assert.equal(err, null);
+            let visitasA = 0;
+            let visitasB = 0;
+            let visitasC = 0;
+            docs.forEach(visita => {
+                if (visita.pagina == 'Página A') {
+                    visitasA += 1;
+                } else if (visita.pagina == 'Página B') {
+                    visitasB += 1;
+                } else if (visita.pagina == 'Página C') {
+                    visitasC += 1;
+                } else {
+                    // Nada
+                }
+            });
+            contexto = {
+                visitaA: visitasA,
+                visitaB: visitasB,
+                visitaC: visitasC,
+                visitas: docs
+            };
+            pusher.trigger('admin', 'agregar-visita', contexto);
+            response.render(pagina);
         });
     });
 }
