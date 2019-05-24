@@ -16,4 +16,11 @@ channel.bind('agregar-visita', function (contexto) {
     contadorB.innerHTML = visitasB;
     let contadorC = document.querySelector('.admin__tabla-c');
     contadorC.innerHTML = visitasC;
+
+    let tabla = document.querySelector('.visitas__tabla');
+    tabla.innerHTML = '';
+    tabla.innerHTML += " <tr><th>Página</th><th>Fecha</th><th>Hora</th></tr>";
+    visitas.forEach(visita => {
+        tabla.innerHTML += "<tr><td>"+visita.pagina+"</td><td>"+visita.fecha+"</td><td>"+visita.hora+"</td></tr>";
+    });
 });

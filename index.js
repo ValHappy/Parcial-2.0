@@ -71,7 +71,7 @@ function obtenerVisitas(response, pagina) {
         assert.equal(null, err);
         const db = client.db(dbName);
         const visitas = db.collection('visitas');
-        visitas.find({}).toArray(function (err, docs) {
+        visitas.find({}).sort({_id:-1}).toArray(function (err, docs) {
             assert.equal(err, null);
             let visitasA = 0;
             let visitasB = 0;
@@ -103,7 +103,7 @@ function enviarMensaje(response, pagina){
         assert.equal(null, err);
         const db = client.db(dbName);
         const visitas = db.collection('visitas');
-        visitas.find({}).toArray(function (err, docs) {
+        visitas.find({}).sort({_id:-1}).toArray(function (err, docs) {
             assert.equal(err, null);
             let visitasA = 0;
             let visitasB = 0;
