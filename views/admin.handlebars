@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/admin.css">
+
+    <title>Admin</title>
+</head>
+
+<body>
+    <section class="titulo-ppal">
+        <h1 class="titulo-ppal__titulo">Administrador</h1>
+    </section>
+
+    <section class="admin">
+        <h3 class="admin__titulo">Visitas por página</h3>
+        <table class="admin__tabla">
+            <tr>
+                <th>Pagina</th>
+                <th>Visitas</th>
+            </tr>
+            <tr>
+                <td>Página A</td>
+                <td>{{visitaA}}</td>
+            </tr>
+            <tr>
+                <td>Página B</td>
+                <td>{{visitaB}}</td>
+            </tr>
+            <tr>
+                <td>Página C</td>
+                <td>{{visitaC}}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="visitas">
+        <h3 class="visitas__titulo">Lista de visitas</h3>
+        <table class="visitas__tabla">
+            <tr>
+                <th>Página</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+            </tr>
+            {{#each visitas}}
+             <tr>
+                <td>{{pagina}}</td>
+                <td>{{fecha}}</td>
+                <td>{{hora}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+    <br><br><br>
+
+</body>
+
+</html>

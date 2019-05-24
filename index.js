@@ -21,33 +21,69 @@ app.get('/', function (request, response) {
 });
 
 app.get('/paginaa', function (request, response) {
-    insertarVisita(response, 'paginaa');
+    insertarVisita(response, 'paginaa', 'Página A');
 });
 
 app.get('/paginab', function (request, response) {
-    insertarVisita(response, 'paginab');
+    insertarVisita(response, 'paginab', 'Página B');
 });
 
 app.get('/paginac', function (request, response) {
-    insertarVisita(response, 'paginac');
+    insertarVisita(response, 'paginac', 'Página C');
 });
 
-function insertarVisita(response, pagina) {
+app.get('/admin', function (request, response) {
+    obtenerVisitas(response, 'admin');
+});
+
+function insertarVisita(response, pagina, paginaTexto) {
     client.connect(function (err) {
         assert.equal(null, err);
         const db = client.db(dbName);
         const collection = db.collection('visitas');
-        var fch = dateTime.create();
-        var fecha = fch.format('d-m-Y');
-        var hora = fch.format('H:M:S');
-        var visita = {
-            pagina: pagina,
+        let fch = dateTime.create();
+        let fecha = fch.format('d-m-Y');
+        let hora = fch.format('H:M:S');
+        let visita = {
+            pagina: paginaTexto,
             fecha: fecha,
             hora: hora
         };
         collection.insertOne(visita, function (err) {
             assert.equal(err, null);
             response.render(pagina);
+        });
+    });
+}
+
+function obtenerVisitas(response, pagina) {
+    client.connect(function (err) {
+        assert.equal(null, err);
+        const db = client.db(dbName);
+        const visitas = db.collection('visitas');
+        visitas.find({}).toArray(function (err, docs) {
+            assert.equal(err, null);
+            let visitasA = 0;
+            let visitasB = 0;
+            let visitasC = 0;
+            docs.forEach(visita => {
+                if (visita.pagina == 'Página A') {
+                    visitasA += 1;
+                } else if (visita.pagina == 'Página B') {
+                    visitasB += 1;
+                } else if (visita.pagina == 'Página C') {
+                    visitasC += 1;
+                } else {
+                    // Nada
+                }
+            });
+            contexto = {
+                visitaA: visitasA,
+                visitaB: visitasB,
+                visitaC: visitasC,
+                visitas: docs
+            };
+            response.render(pagina, contexto);
         });
     });
 }

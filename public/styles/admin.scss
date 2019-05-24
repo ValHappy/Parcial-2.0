@@ -1,0 +1,81 @@
+$color-ppal: #fbdb5c;
+$color-sec: #f8be49;
+
+body{
+    font-family: 'Barlow', sans-serif;
+    background: $color-ppal;
+}
+
+.titulo-ppal{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+
+    &__titulo{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.5em;
+        color: white;
+    }
+}
+
+.admin{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__titulo{
+        color: white;
+        font-size: 2em;
+        font-weight: lighter;
+    }
+    
+}
+
+.admin__tabla {
+    width: 20%;
+    border-collapse: collapse;
+    border: 0.1em solid rgb(249,249,249); 
+}
+
+td, th {
+    color: white;
+    text-align: center;
+    padding: 0.8em;
+}
+
+th {
+    color: $color-sec;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    background-color: rgb(249,249,249);
+}
+
+.visitas{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__titulo{
+        color: white;
+        font-size: 2em;
+        font-weight: lighter;
+    }
+    
+}
+
+.visitas__tabla {
+    width: 50%;
+    border-collapse: collapse;
+    border: 0.1em solid rgb(249,249,249); 
+}
