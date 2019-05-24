@@ -1,0 +1,81 @@
+$color-ppal: #ffafa7;
+$color-sec: #ff434c;
+
+body{
+    font-family: 'Barlow', sans-serif;
+    background: $color-ppal;
+}
+
+.titulo-ppal{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    
+    &__titulo{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.5em;
+        color: white;
+    }
+}
+
+.regresar{
+    text-align: right;
+    
+    &__a{
+        padding: 1em;
+    }
+}
+
+
+.pagina{
+    width: 50%;
+    margin: auto;
+    
+    &__texto{
+        text-align: center;
+        color: white;
+    }
+    
+    &__botones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.btn {
+    width: 20%;
+    margin: 1.5em;
+    padding: 1em;
+    border-radius: 12em;
+    text-align: center;
+    font-size: 0.6em;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn1 {
+    background-color: white; 
+    color: $color-sec; 
+    border: 0.1em solid $color-sec;;
+}
+
+.btn1:hover {
+    background-color: $color-sec;;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: $color-sec;
+    
+    &:hover{
+        color: white;
+    }
+}

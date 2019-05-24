@@ -12,5 +12,9 @@ app.get('/', function (request, response) {
     response.render('home');
 });
 
+app.get('/paginaa', function (request, response) {
+    response.render('paginaa');
+});
+
 console.log("Servidor iniciado...");
 app.listen(3000);
