@@ -2,6 +2,18 @@
 $color-ppal: #ffafa7;
 $color-sec: #ff434c;
 
+$color-admin: #fbdb5c;
+$color-admin-sec: #f8be49;
+
+$color-a: #86d8ff;
+$color-a-sec: #2fa5fa;
+
+$color-b: #72c4fe;
+$color-b-sec: #0067ef;
+
+$color-c: #8fe1ee;
+$color-c-sec: #01d0eb;
+
 body{
     font-family: 'Barlow', sans-serif;
     background: $color-ppal;
@@ -24,9 +36,122 @@ body{
         letter-spacing: 0.5em;
         color: white;
     }
-
+    
     &__nombres{
+        letter-spacing: 0.2em;
         font-size: 18px;
+        font-weight: lighter;
         color: $color-sec;
     }
 }
+
+.pagina{
+    width: 60%;
+    margin: auto;
+    
+    &__texto{
+        font-size: 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    &__botones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.btn {
+    width: 20%;
+    margin: 1.5em;
+    padding: 0.8em;
+    border-radius: 12em;
+    text-align: center;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+    &__a{
+        &-admin{
+            text-decoration: none;
+            color: $color-admin-sec;
+            &:hover{
+                color: white;
+            }
+        }
+
+        &-a{
+            text-decoration: none;
+            color: $color-a-sec;
+            &:hover{
+                color: white;
+            }
+        }
+
+        &-b{
+            text-decoration: none;
+            color: $color-b-sec;
+            &:hover{
+                color: white;
+            }
+        }
+
+        &-c{
+            text-decoration: none;
+            color: $color-c-sec;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+
+.btn-admin {
+    background-color: white; 
+    color: $color-admin-sec; 
+    border: 0.1em solid $color-admin-sec;
+    
+    &:hover{
+        background-color: $color-admin-sec;
+        color: white;
+    }    
+}
+
+.btn-a {
+    background-color: white; 
+    color: $color-a-sec; 
+    border: 0.1em solid $color-a-sec;
+    
+    &:hover{
+        background-color: $color-a-sec;
+        color: white;
+    }    
+}
+
+.btn-b {
+    background-color: white; 
+    color: $color-b-sec; 
+    border: 0.1em solid $color-b-sec;
+    
+    &:hover{
+        background-color: $color-b-sec;
+        color: white;
+    }    
+}
+
+.btn-c {
+    background-color: white; 
+    color: $color-c-sec; 
+    border: 0.1em solid $color-c-sec;
+    
+    &:hover{
+        background-color: $color-c-sec;
+        color: white;
+    }    
+}
+
+
+
+

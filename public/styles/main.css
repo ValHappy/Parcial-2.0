@@ -32,7 +32,124 @@ body {
 }
 
 .titulo-ppal__nombres {
+  letter-spacing: 0.2em;
   font-size: 18px;
+  font-weight: lighter;
   color: #ff434c;
+}
+
+.pagina {
+  width: 60%;
+  margin: auto;
+}
+
+.pagina__texto {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+.pagina__botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn {
+  width: 20%;
+  margin: 1.5em;
+  padding: 0.8em;
+  border-radius: 12em;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn__a-admin {
+  text-decoration: none;
+  color: #f8be49;
+}
+
+.btn__a-admin:hover {
+  color: white;
+}
+
+.btn__a-a {
+  text-decoration: none;
+  color: #2fa5fa;
+}
+
+.btn__a-a:hover {
+  color: white;
+}
+
+.btn__a-b {
+  text-decoration: none;
+  color: #0067ef;
+}
+
+.btn__a-b:hover {
+  color: white;
+}
+
+.btn__a-c {
+  text-decoration: none;
+  color: #01d0eb;
+}
+
+.btn__a-c:hover {
+  color: white;
+}
+
+.btn-admin {
+  background-color: white;
+  color: #f8be49;
+  border: 0.1em solid #f8be49;
+}
+
+.btn-admin:hover {
+  background-color: #f8be49;
+  color: white;
+}
+
+.btn-a {
+  background-color: white;
+  color: #2fa5fa;
+  border: 0.1em solid #2fa5fa;
+}
+
+.btn-a:hover {
+  background-color: #2fa5fa;
+  color: white;
+}
+
+.btn-b {
+  background-color: white;
+  color: #0067ef;
+  border: 0.1em solid #0067ef;
+}
+
+.btn-b:hover {
+  background-color: #0067ef;
+  color: white;
+}
+
+.btn-c {
+  background-color: white;
+  color: #01d0eb;
+  border: 0.1em solid #01d0eb;
+}
+
+.btn-c:hover {
+  background-color: #01d0eb;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,7 @@
 
+//Parcial 2
+//Paula Peñaranda & Valentina Alegría (Pauppy)
+
 var express = require('express');
 var exphbs = require('express-handlebars');
 var MongoClient = require('mongodb').MongoClient;
